@@ -47,7 +47,7 @@ export default function MasterPassScreen() {    // this allows import this funct
     }
 
     return (
-      <KeyboardAvoidingView style = {styles.container} behavior={Platform.OS === 'ios'? 'padding':'height'}>
+      <KeyboardAvoidingView style = {styles.container} behavior={Platform.OS === 'ios'? 'padding':'height'}> 
         <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible = {false}>
           <View style = {styles.container}>
               <Text style = {styles.title}> Master Password</Text>
