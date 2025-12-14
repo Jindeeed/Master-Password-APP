@@ -27,15 +27,29 @@ export default function PasswordCheck() {
         let passed = 0
         for (let i = 0; i < requirement.length; i ++ ){
           if (requirement[i](pass)) passed += 1;
-            return passed;
+            
         }
-    };
+        return passed;
+    }
+
+    function handleCheck() {
+        setScore(checkPass(pass));
+    }
+
+    function recRating(score: number) {
+        if (score <= 2) return 'Password is Weak';
+        if (score === 3) return 'Password is Moderate';
+        if (score === 4) return 'Password is Good';
+        else
+            return 'Password is Strong';
+    }
+
+
+
 
 
 
     return (
-
-
     <KeyboardAvoidingView style = {styles.container} behavior={Platform.OS === 'ios'? 'padding':'height'}>
     <View style = {styles.container}> 
 
