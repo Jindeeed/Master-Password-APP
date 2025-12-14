@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { KeyboardAvoidingView, Platform, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { TouchableWithoutFeedback} from 'react-native-gesture-handler';
 
-export default function passwordCheck() {
+export default function PasswordCheck() {
 
     const [pass,setPass] = useState('');
 
