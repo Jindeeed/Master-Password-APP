@@ -3,13 +3,13 @@ import React, { useState } from 'react';
 import { KeyboardAvoidingView, Platform, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { TouchableWithoutFeedback} from 'react-native-gesture-handler';
 
-  const requirement = [
-            function (pass: string): boolean { return /[^A-Za-z0-9]/.test(pass)},
-            function (pass: string): boolean { return /[0-9]/.test(pass)},
-            function (pass: string): boolean { return /[A-Z]/.test(pass)},
-            function (pass: string): boolean { return /[a-z]/.test(pass)},
-            function (pass: string): boolean {return pass.length>= 8}
-        ]; 
+const requirement = [
+        function (pass: string): boolean { return /[^A-Za-z0-9]/.test(pass)},
+        function (pass: string): boolean { return /[0-9]/.test(pass)},
+        function (pass: string): boolean { return /[A-Z]/.test(pass)},
+        function (pass: string): boolean { return /[a-z]/.test(pass)},
+        function (pass: string): boolean {return pass.length>= 8}
+    ]; 
 
 
 
