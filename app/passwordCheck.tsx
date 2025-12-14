@@ -3,34 +3,32 @@ import React, { useState } from 'react';
 import { KeyboardAvoidingView, Platform, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { TouchableWithoutFeedback} from 'react-native-gesture-handler';
 
-export default function PasswordCheck() {
-
-    const [pass,setPass] = useState('');
-    const [score,setScore] = useState<number | null>(null); /* nul is not checked yet*/
-
-
   const requirement = [
             function (pass: string): boolean { return /[^A-Za-z0-9]/.test(pass)},
             function (pass: string): boolean { return /[0-9]/.test(pass)},
             function (pass: string): boolean { return /[A-Z]/.test(pass)},
             function (pass: string): boolean { return /[a-z]/.test(pass)},
             function (pass: string): boolean {return pass.length>= 8}
-        ]  
+        ]; 
+
+
+
+export default function PasswordCheck() {
+
+    const [pass,setPass] = useState('');
+    const [score,setScore] = useState<number | null>(null); /* nul is not checked yet*/
+
+
+
 
 
     function checkPass(pass: string){
         
         let passed = 0
-
-            
-
-        
-
         for (let i = 0; i < requirement.length; i ++ ){
           if (requirement[i](pass)) passed += 1;
             return passed;
         }
-
     };
 
 
