@@ -26,7 +26,8 @@ export default function passwordCheck() {
         
 
         for (let i = 0; i < requirement.length; i ++ ){
-          requirement[i]?passed+=1:pass; 
+          if (requirement[i](pass)) passed += 1;
+            return passed;
         }
 
     };
@@ -81,46 +82,43 @@ export default function passwordCheck() {
 
 const styles = StyleSheet.create({
 
-
-    container: {
-
-
-
-
+ container: {
+        flex: 1,
     },
-
-
+    innerContainer: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: 20,
+    },
+    title: {
+        fontSize: 18,
+        marginBottom: 20,
+        textAlign: 'center',
+    },
     input: {
-
-
-
-
-
-
+        width: '100%',
+        borderWidth: 1,
+        borderColor: '#ccc',
+        padding: 10,
+        borderRadius: 5,
+        marginBottom: 20,
     },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    button: {
+        backgroundColor: '#007AFF',
+        padding: 12,
+        borderRadius: 5,
+        marginBottom: 20,
+        width: '100%',
+    },
+    buttonText: {
+        color: '#fff',
+        textAlign: 'center',
+        fontWeight: 'bold',
+    },
+    result: {
+        fontSize: 16,
+        fontWeight: 'bold',
+    },
 });
+    
