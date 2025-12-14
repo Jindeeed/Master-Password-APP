@@ -22,7 +22,7 @@ export default function PasswordCheck() {
 
 
 
-    function checkPass(pass: string){
+    function checkPass(pass: string): number{
         
         let passed = 0
         for (let i = 0; i < requirement.length; i ++ ){
