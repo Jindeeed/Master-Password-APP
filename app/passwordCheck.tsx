@@ -67,7 +67,11 @@ export default function PasswordCheck() {
 
         
 
+        <TouchableOpacity style = {styles.button} onPress={handleCheck}>
+
+        <Text style = {styles.buttonText}> Check Password </Text>
         
+        </TouchableOpacity>
         
         
     </View>
