@@ -6,6 +6,7 @@ import { TouchableWithoutFeedback} from 'react-native-gesture-handler';
 export default function PasswordCheck() {
 
     const [pass,setPass] = useState('');
+    const [score,setScore] = useState<number | null>(null);
 
 
   const requirement = [
