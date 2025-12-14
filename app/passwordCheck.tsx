@@ -8,20 +8,20 @@ export default function PasswordCheck() {
     const [pass,setPass] = useState('');
 
 
+  const requirement = [
+            function (pass: string): boolean { return /[^A-Za-z0-9]/.test(pass)},
+            function (pass: string): boolean { return /[0-9]/.test(pass)},
+            function (pass: string): boolean { return /[A-Z]/.test(pass)},
+            function (pass: string): boolean { return /[a-z]/.test(pass)}
 
+        ]  
 
 
     function checkPass(pass: string){
         
         let passed = 0
 
-        const requirement = [
-            function (pass: string): boolean { return /[^A-Za-z0-9]/.test(pass)},
-            function (pass: string): boolean { return /[0-9]/.test(pass)},
-            function (pass: string): boolean { return /[A-Z]/.test(pass)},
-            function (pass: string): boolean { return /[a-z]/.test(pass)}
-
-        ]        
+            
 
         
 
