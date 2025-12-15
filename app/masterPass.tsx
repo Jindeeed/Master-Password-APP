@@ -46,6 +46,10 @@ export default function MasterPassScreen() {    // this allows import this funct
       return /[0-9]/.test(master)
     }
 
+    const isValid = minLength(master) && specialChar(master) && upperCase(master) && digit(master);  /* creates a valid check so we know if password meets requirements */
+  
+
+
     return (
       <KeyboardAvoidingView style = {styles.container} behavior={Platform.OS === 'ios'? 'padding':'height'}> 
         <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible = {false}>
@@ -84,7 +88,7 @@ export default function MasterPassScreen() {    // this allows import this funct
                 • Has at least 8 characters          
               </Text>
 
-
+              <Text style = {styles.buttonText}> Submit </Text>
 
 
               <TouchableOpacity style = {styles.pinButton} onPress = {handlePin} activeOpacity={0.7}>           
