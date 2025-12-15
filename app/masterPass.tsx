@@ -9,13 +9,24 @@ import { Keyboard, KeyboardAvoidingView, Platform, StyleSheet, Text, TextInput, 
 
 export default function MasterPassScreen() {    // this allows import this function as the main thing from the file (this file specifically)
     const [master,setMaster] = useState(''); // master is used to allow user to enter password, setMastere is useds to update the password, useState is used to temporarily store a value.
-    const[pin,setPin] = useState('') // in case user would rather use a pin as opposed to a master password.
+   // const[pin,setPin] = useState('') // in case user would rather use a pin as opposed to a master password.
+    const [error,setError] = useState('');
+    
+    
     const router = useRouter();
 
 
     const handleInput = function(){
+      if (isValid) {
+        setError('');
+        router.push('...')
 
-
+        
+      } else {
+         setError('Password does not meet requirements. Please Update');
+        return;
+      }
+       
     }
 
     const handlePin = function(){
