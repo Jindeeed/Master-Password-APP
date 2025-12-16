@@ -1,13 +1,36 @@
 import { useState } from "react";
+import { View, Text, TextInput, TouchableOpacity } from "react-native";
+import { useRouter } from "expo-router";
 
-export default function unlockInput({ onSubmit, buttonLabel = "Submit" }: unlockInputProps) {
-}
-const[pass,setPass] = useState('');
-const[error,setError] = useState('');
+type UnlockInputProps = {
+  buttonLabel?: string;
+};
 
-let storedMasterPass = 'TestingPassword2928*'; // our password placeholder before authentication logic
+export default function UnlockInput({ buttonLabel = "Submit" }: UnlockInputProps) {
+  const router = useRouter();
 
-const handleInput = function() {
-    c
+  const [pass, setPass] = useState('');
+  const [error, setError] = useState('');
 
-}
+
+  const storedMasterPass = 'TestingPassword223232*'; // temporary password
+
+  function handleInput() {
+    if (pass === storedMasterPass) {
+      setError('');
+      router.push('/vault');
+    } else {
+      setError('Password is incorrect');
+    }
+  }
+
+
+
+return (
+    <View
+
+
+
+
+
+)
