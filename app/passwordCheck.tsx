@@ -45,8 +45,19 @@ export default function PasswordCheck() {
     }
 
 
-
-
+    
+    function Result() {
+    if (score !== null) {
+        return (
+            <View style={{ marginTop: 20 }}>
+                <Text style={styles.result}>Password: {pass}</Text>
+                <Text style={styles.result}>Rating: {recRating(score)}</Text>
+            </View>
+        );
+    } else {
+        return null;
+    }
+}
 
 
     return (
@@ -69,10 +80,10 @@ export default function PasswordCheck() {
 
         <TouchableOpacity style = {styles.button} onPress={handleCheck}>
 
-        <Text style = {styles.buttonText}> Check Password </Text>
-        
+        <Text style = {styles.buttonText}> Check Password </Text>      
         </TouchableOpacity>
         
+        {Result()}
         
     </View>
     </KeyboardAvoidingView>
